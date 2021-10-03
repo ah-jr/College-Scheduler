@@ -1,0 +1,8 @@
+*.res
+*.dcu
+__history/
+Win32/Debug/*.txt
+Win32/Debug/__history/
+*.local
+*.identcache
+*.exe
