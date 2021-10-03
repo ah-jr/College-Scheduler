@@ -36,10 +36,16 @@ type
     btnDelete: TButton;
     procedure btnMoodleClick(Sender: TObject);
     procedure btnClassSiteClick(Sender: TObject);
+    procedure FrameResize(Sender: TObject);
+
   private
     strMoodleLink : String;
     strSiteLink   : String;
+
+    ColorFrame    : TForm;
+
   public
+    constructor Create(AOwner:TComponent);override;
     procedure SetInfo(lstInfo : TList<String>);
   end;
 
@@ -49,6 +55,40 @@ var
 implementation
 
 {$R *.dfm}
+
+constructor TDiscipline.Create(AOwner: TComponent);
+begin
+  inherited;
+  Brush.Style := bsClear;
+
+  ColorFrame := TForm.Create(Self);
+  ColorFrame.Parent := Self;
+  ColorFrame.AlphaBlend := True;
+  ColorFrame.BorderStyle := bsNone;
+  ColorFrame.Color := clBlack;
+  ColorFrame.Name := 'ColorFrame';
+
+  ColorFrame.AlphaBlendValue := 30;
+  ColorFrame.Show;
+end;
+
+procedure TDiscipline.FrameResize(Sender: TObject);
+var
+  nIndex : Integer;
+begin
+  ColorFrame.Top    := 0;
+  ColorFrame.Left   := 0;
+  ColorFrame.Width  := Width;
+  ColorFrame.Height := Height;
+
+  for nIndex := 0 to Self.ComponentCount - 1 do
+    begin
+      if (Self.Components[nIndex].Name <> 'ColorFrame') then
+        begin
+          TControl(Self.Components[nIndex]).BringToFront;
+        end;
+    end;
+end;
 
 procedure TDiscipline.btnClassSiteClick(Sender: TObject);
 begin

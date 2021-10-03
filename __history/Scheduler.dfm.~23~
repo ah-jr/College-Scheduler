@@ -1,0 +1,125 @@
+object Scheduler: TScheduler
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form1'
+  ClientHeight = 946
+  ClientWidth = 1024
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  GlassFrame.Enabled = True
+  GlassFrame.SheetOfGlass = True
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlContent: TPanel
+    Left = 0
+    Top = 0
+    Width = 1024
+    Height = 946
+    Align = alClient
+    BevelOuter = bvSpace
+    TabOrder = 0
+    ExplicitWidth = 1044
+    ExplicitHeight = 833
+    object pnlDates: TPanel
+      Left = 300
+      Top = 10
+      Width = 444
+      Height = 232
+      BevelOuter = bvNone
+      TabOrder = 0
+      object pnlDatesContent: TPanel
+        Left = 0
+        Top = 41
+        Width = 444
+        Height = 191
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+      end
+      object pnlDatesButton: TPanel
+        Left = 0
+        Top = 0
+        Width = 444
+        Height = 41
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 1
+        object btnAddDate: TButton
+          Left = 0
+          Top = 0
+          Width = 444
+          Height = 41
+          Align = alClient
+          Caption = 'Add Date'
+          TabOrder = 0
+        end
+      end
+    end
+    object pnlDisciplines: TPanel
+      Left = 10
+      Top = 10
+      Width = 272
+      Height = 415
+      BevelOuter = bvNone
+      TabOrder = 1
+      object pnlDisciplineContent: TPanel
+        Tag = 1
+        Left = 0
+        Top = 41
+        Width = 272
+        Height = 374
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        ExplicitLeft = 64
+        ExplicitTop = 105
+      end
+      object pnlDisciplineButton: TPanel
+        Left = 0
+        Top = 0
+        Width = 272
+        Height = 41
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 1
+        ExplicitWidth = 184
+        object btnAddDiscipline: TButton
+          Left = 0
+          Top = 0
+          Width = 272
+          Height = 41
+          Align = alClient
+          Caption = 'Add Discipline'
+          TabOrder = 0
+          OnClick = btnAddDisciplineClick
+          ExplicitWidth = 184
+        end
+      end
+      object Panel1: TPanel
+        Left = 40
+        Top = 328
+        Width = 185
+        Height = 41
+        Caption = 'Panel1'
+        TabOrder = 2
+      end
+      object Button1: TButton
+        Left = 112
+        Top = 248
+        Width = 75
+        Height = 25
+        Caption = 'Button1'
+        TabOrder = 3
+      end
+    end
+  end
+end
